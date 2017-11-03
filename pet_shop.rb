@@ -68,9 +68,9 @@ end
 
 def sell_pet_to_customer(shop, pet, customer)
   if pet == nil
-    return
+    return "Pet doesn't exist. Sorry."
   elsif customer_can_afford_pet(customer, pet) == false
-    return
+    return "You're too poor. Shoo."
   else
     price = pet[:price]
     before_count = customer_pet_count(customer)
