@@ -76,9 +76,7 @@ def pets_by_breed(hash, breed)
 	number_of_breed = []
 	pets = hash[:pets]
 	for pet in pets
-		if pet[:breed] == breed
-			number_of_breed.push(pet)
-		end
+		number_of_breed.push(pet) if pet[:breed] == breed
 	end
 	return number_of_breed
 end
@@ -86,9 +84,7 @@ end
 def find_pet_by_name(hash, name)
 	pets = hash[:pets]
 	for pet in pets
-		if pet[:name] == name
-			return pet
-		end
+		return pet if pet[:name] == name
 	end
 	return nil
 end
@@ -96,9 +92,7 @@ end
 def remove_pet_by_name(hash, name)
 	pets = hash[:pets]
 	for pet in pets
-		if pet[:name] == name
-			pets.delete(pet)
-		end
+		pets.delete(pet) if pet[:name] == name
 	end
 end
 
