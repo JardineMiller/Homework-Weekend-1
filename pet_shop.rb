@@ -73,12 +73,12 @@ def stock_count(hash)
 end
 
 def pets_by_breed(hash, breed)
-	number_of_breed = []
+	same_breed = []
 	pets = hash[:pets]
 	for pet in pets
-		number_of_breed.push(pet) if pet[:breed] == breed
+		same_breed.push(pet) if pet[:breed] == breed
 	end
-	return number_of_breed
+	return same_breed
 end
 
 def find_pet_by_name(hash, name)
