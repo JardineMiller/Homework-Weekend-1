@@ -74,7 +74,7 @@ def sell_pet_to_customer(shop, pet, customer)
   else
     price = pet[:price]
     before_count = customer_pet_count(customer)
-    customer[:pets] << pet
+    add_pet_to_customer(customer, pet)
     after_count = customer_pet_count(customer)
     increase_pets_sold(shop, (after_count - before_count))
     add_or_remove_cash(shop, price)
