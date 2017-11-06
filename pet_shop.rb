@@ -67,7 +67,10 @@ def sell_pet_to_customer(shop, pet, customer)
     return "You're too poor. Shoo." if customer_can_afford_pet(customer, pet) == false
 
     price = pet[:price]
+    pet_name = pet[:name]
+
     add_pet_to_customer(customer, pet)
+    remove_pet_by_name(shop, pet_name)
     increase_pets_sold(shop, 1)
     add_or_remove_cash(shop, price)
 end
