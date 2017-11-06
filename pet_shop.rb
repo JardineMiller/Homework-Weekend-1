@@ -67,16 +67,11 @@ def customer_can_afford_pet(customer, pet)
 end
 
 def sell_pet_to_customer(shop, pet, customer)
-  if pet == nil
-    return "Pet doesn't exist. Sorry."
-  elsif customer_can_afford_pet(customer, pet) == false
-    return "You're too poor. Shoo."
-  else
+    return "Pet doesn't exist. Sorry." if pet == nil
+    return "You're too poor. Shoo." if customer_can_afford_pet(customer, pet) == false
+
     price = pet[:price]
-    before_count = customer_pet_count(customer)
     add_pet_to_customer(customer, pet)
-    after_count = customer_pet_count(customer)
-    increase_pets_sold(shop, (after_count - before_count))
+    increase_pets_sold(shop, 1)
     add_or_remove_cash(shop, price)
-  end
 end
